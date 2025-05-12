@@ -577,9 +577,37 @@ Project X demonstrates the viability of browser-based cloud desktop environments
 
 ## Annexure 1: Code Sample
 
-Key implementation details from the codebase include:
+1. Project Structure Overview:
 
-1. **User Authentication (server/controllers/authController.js)**:
+Key implementation details from the codebase include:
+```
+project-x/
+├── client/                # React frontend
+│   ├── public/            # Static assets
+│   ├── src/               # Source code
+│   │   ├── components/    # React components
+│   │   ├── pages/         # Page layouts
+│   │   ├── context/       # React context providers
+│   │   ├── App.js         # Main application component
+│   │   └── index.js       # Entry point
+│   └── package.json       # Frontend dependencies
+├── server/                # Node.js backend
+│   ├── config/            # Configuration files
+│   ├── controllers/       # Request handlers
+│   ├── models/            # Database schemas
+│   ├── routes/            # API routes
+│   ├── middlewares/       # Custom middleware
+│   ├── helpers/           # Utility functions
+│   ├── server.js          # Server entry point
+│   └── package.json       # Backend dependencies
+└── docker/                # Container orchestration
+    ├── config/            # Docker configuration
+    ├── controllers/       # Container management
+    ├── routes/            # Orchestration API
+    ├── orchestration.js   # Orchestration entry point
+    └── package.json       # Orchestration dependencies
+```
+2 . **User Authentication (server/controllers/authController.js)**:
 ```javascript
 // JWT-based authentication implementation
 const loginController = async (req, res) => {
